@@ -1,4 +1,5 @@
 import { GetStaticProps, GetStaticPropsContext } from 'next';
+import Link from 'next/link';
 import React from 'react';
 
 export interface PostProps {
@@ -12,11 +13,13 @@ export default function Post({ posts }: PostProps) {
 
       <ul>
         {posts.map((item: any, index: number) => (
-          <div key={index}>
-            <h2 style={{ color: '#FFD95A' }}> {item.title}</h2>
+          <div key={item.id}>
+            <Link href={`/posts/${item.id}`}>
+              <li style={{ color: '#FFD95A' }}>{item.title} -- go to post</li>
+            </Link>
             <br />
 
-            <li>{item.description}</li>
+            <li>{item.body}</li>
             <br />
             <br />
           </div>
@@ -32,11 +35,11 @@ export const getStaticProps: GetStaticProps<PostProps> = async (context: GetStat
   console.log('static props');
   const response = await fetch('https://js-post-api.herokuapp.com/api/posts?_page=1');
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
 
   return {
     props: {
-      posts: data.data,
+      posts: data.data.map((x: any) => ({ id: x.id, title: x.title, body: x.description })),
     },
   };
 };
