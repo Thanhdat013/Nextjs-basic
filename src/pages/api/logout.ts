@@ -1,13 +1,10 @@
-import httpProxy from 'http-proxy'
 import Cookies from 'cookies'
-import url from 'url'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 const API_URL = process.env.API_URL
 type Data = {
   message: string
 }
-const proxy = httpProxy.createProxyServer()
 
 export const config = {
   api: {

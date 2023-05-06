@@ -1,6 +1,6 @@
-import { LayoutProps } from '@/models/common';
-import Link from 'next/link';
-import * as React from 'react';
+import { LayoutProps } from '@/models/common'
+import Link from 'next/link'
+import * as React from 'react'
 
 export function MainLayout({ children }: LayoutProps) {
   return (
@@ -11,5 +11,5 @@ export function MainLayout({ children }: LayoutProps) {
 
       <div>{children}</div>
     </div>
-  );
+  )
 }

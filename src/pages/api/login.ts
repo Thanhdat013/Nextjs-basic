@@ -36,9 +36,12 @@ const handler = (req: NextApiRequest, res: NextApiResponse<Data>) => {
       proxyRes.on('data', function (chunk) {
         body += chunk
       })
+      //.on() apply cho tất cả request của proxy server
+      //once() apply cho 1 request
       proxyRes.on('end', function () {
         try {
           const { accessToken, expiredAt } = JSON.parse(body)
+          console.log(JSON.parse(body))
 
           // convert token to cookie
           const cookies = new Cookies(req, res, { secure: process.env.NODE_ENV !== 'development' })
