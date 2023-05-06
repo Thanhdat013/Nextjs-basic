@@ -6,5 +6,8 @@ type Data = {
 };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  res.status(200).json({ name: 'John Doe' });
+  if (req.method !== 'GET') {
+    return res.status(404).json({ name: 'no support' });
+  }
+  res.status(200).json({ name: 'Get list of product' });
 }

@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 // import HeaderProps from './components/Header';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-
+import { MainLayout } from '@/components/layout';
 export interface AboutPage {}
-const HeaderProps = dynamic(() => import('@/components/Header'), { ssr: false });
+const HeaderProps = dynamic(() => import('@/pages/Header'), { ssr: false });
 
 export default function AboutPage(props: AboutPage) {
   const router = useRouter();
@@ -48,6 +48,8 @@ export default function AboutPage(props: AboutPage) {
     </div>
   );
 }
+
+AboutPage.Layout = MainLayout;
 
 export async function getStaticProps() {
   console.log('render SSR');
