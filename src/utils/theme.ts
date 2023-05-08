@@ -11,6 +11,10 @@ export const roboto = Roboto({
 
 // Create a theme instance.
 export const theme = createTheme({
+  typography: {
+    fontFamily: 'Heebo, sans-serif',
+  },
+
   palette: {
     primary: {
       main: '#FF6464',
@@ -19,6 +23,7 @@ export const theme = createTheme({
     },
     secondary: {
       main: '#00A8CC',
+      light: '#EDF7FA',
     },
 
     error: {
@@ -54,9 +59,13 @@ export const theme = createTheme({
         },
       },
     },
-  },
-
-  typography: {
-    fontFamily: roboto.style.fontFamily,
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: 'contained', color: 'primary' },
+          style: { color: 'white' },
+        },
+      ],
+    },
   },
 })

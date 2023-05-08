@@ -22,6 +22,7 @@
       "@/api/*": ["./api-client/*"],
       "@/hooks/*": ["./hooks/*"],
       "@/utils/*": ["./utils/*"],
+      "@/images/*": ["./images/*"],
       "@/common/*": ["./src/components/common/*"]
     }
   },

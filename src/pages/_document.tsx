@@ -26,6 +26,10 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="emotion-insertion-point" content="" />
         {emotionStyleTags}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <body>
         <Main />
