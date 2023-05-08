@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { AdminLayout, MainLayout } from '@/components/layout'
+import { Box, Typography } from '@mui/material'
 export interface AboutPage {}
 const HeaderProps = dynamic(() => import('@/pages/Header'), { ssr: false })
 
@@ -35,8 +36,13 @@ export default function AboutPage(props: AboutPage) {
   }
 
   return (
-    <div>
+    <Box>
       <div>About page</div>
+
+      <Typography component="h1" variant="h3" color="primary.main">
+        About
+      </Typography>
+
       <h3>Go to home</h3>
       <HeaderProps />
       <ul>
@@ -45,7 +51,7 @@ export default function AboutPage(props: AboutPage) {
         ))}
       </ul>
       <button onClick={handleClickNext}>Next Page</button>
-    </div>
+    </Box>
   )
 }
 
