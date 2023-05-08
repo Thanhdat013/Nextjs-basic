@@ -1,5 +1,4 @@
 import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
 import { EmptyLayout } from '@/components/layout'
 import { AppPropsWithLayout } from '@/models/common'
 import { SWRConfig } from 'swr/_internal'

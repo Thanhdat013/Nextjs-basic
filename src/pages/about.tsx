@@ -1,25 +1,25 @@
-import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
 // import HeaderProps from './components/Header';
-import dynamic from 'next/dynamic';
-import { useRouter } from 'next/router';
-import { MainLayout } from '@/components/layout';
+import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
+import { AdminLayout, MainLayout } from '@/components/layout'
 export interface AboutPage {}
-const HeaderProps = dynamic(() => import('@/pages/Header'), { ssr: false });
+const HeaderProps = dynamic(() => import('@/pages/Header'), { ssr: false })
 
 export default function AboutPage(props: AboutPage) {
-  const router = useRouter();
-  const [postList, setPostList] = useState([]);
-  const page = router.query?.page;
+  const router = useRouter()
+  const [postList, setPostList] = useState([])
+  const page = router.query?.page
   useEffect(() => {
-    if (!page) return;
-    (async () => {
-      const response = await fetch(`https://js-post-api.herokuapp.com/api/posts/?_page=${page}`);
-      const data = await response.json();
+    if (!page) return
+    ;(async () => {
+      const response = await fetch(`https://js-post-api.herokuapp.com/api/posts/?_page=${page}`)
+      const data = await response.json()
 
-      setPostList(data.data);
-    })();
-  }, [page]);
+      setPostList(data.data)
+    })()
+  }, [page])
 
   const handleClickNext = () => {
     router.push(
@@ -31,8 +31,8 @@ export default function AboutPage(props: AboutPage) {
       },
       undefined,
       { shallow: true }
-    );
-  };
+    )
+  }
 
   return (
     <div>
@@ -46,15 +46,15 @@ export default function AboutPage(props: AboutPage) {
       </ul>
       <button onClick={handleClickNext}>Next Page</button>
     </div>
-  );
+  )
 }
 
-AboutPage.Layout = MainLayout;
+AboutPage.Layout = AdminLayout
 
 export async function getStaticProps() {
-  console.log('render SSR');
+  console.log('render SSR')
 
   return {
     props: {},
-  };
+  }
 }
