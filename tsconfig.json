@@ -21,7 +21,8 @@
       "@/pages/*": ["./src/pages/components/*"],
       "@/api/*": ["./api-client/*"],
       "@/hooks/*": ["./hooks/*"],
-      "@/utils/*": ["./utils/*"]
+      "@/utils/*": ["./utils/*"],
+      "@/common/*": ["./src/components/common/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
