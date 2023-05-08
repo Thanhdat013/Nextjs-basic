@@ -9,6 +9,22 @@ export const roboto = Roboto({
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 })
 
+// custom breakpoints
+declare module '@mui/material/styles' {
+  interface BreakpointOverrides {
+    xs: false // removes the `xs` breakpoint
+    sm: false
+    md: false
+    lg: false
+    xl: false
+    mobile: true // adds the `mobile` breakpoint
+    tabletMini: true
+    tablet: true
+    laptop: true
+    desktop: true
+  }
+}
+
 // Create a theme instance.
 export let theme = createTheme({
   typography: {
@@ -29,11 +45,23 @@ export let theme = createTheme({
     error: {
       main: red.A400,
     },
+    text: {
+      primary: '#21243D',
+    },
+  },
+  breakpoints: {
+    values: {
+      mobile: 0,
+      tabletMini: 760,
+      tablet: 860,
+      laptop: 1024,
+      desktop: 1200,
+    },
   },
   components: {
     MuiContainer: {
       defaultProps: {
-        maxWidth: 'md',
+        maxWidth: 'tablet',
       },
       styleOverrides: {
         maxWidthMd: {

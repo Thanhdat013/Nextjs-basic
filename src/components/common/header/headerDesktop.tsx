@@ -10,7 +10,7 @@ export default function HeaderDesktop() {
   const router = useRouter()
 
   return (
-    <Box display={{ xs: 'none', md: 'block' }} py={2}>
+    <Box display={{ mobile: 'none', tabletMini: 'block' }} py={2}>
       <Container>
         <Stack direction="row" justifyContent="flex-end">
           {ROUTE_LIST.map((route) => (
