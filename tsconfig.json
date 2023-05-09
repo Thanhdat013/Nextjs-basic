@@ -23,6 +23,7 @@
       "@/home/*": ["./src/components/home/*"],
       "@/common/*": ["./src/components/common/*"],
       "@/layout/*": ["./src/components/layout/*"],
+      "@/blog/*": ["./src/components/blog/*"],
       "@/utils/*": ["./src/utils/*"]
     }
   },

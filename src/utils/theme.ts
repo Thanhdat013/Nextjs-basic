@@ -52,7 +52,7 @@ export let theme = createTheme({
   breakpoints: {
     values: {
       mobile: 0,
-      tabletMini: 760,
+      tabletMini: 680,
       tablet: 860,
       laptop: 1024,
       desktop: 1200,

@@ -14,7 +14,8 @@ export default function RecentPosts() {
       description:
         'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
       tagList: ['Design', 'Pattern'],
-      publishedDate: '1683564640973',
+      publishedDate: '2022-06-18T12:00:00Z',
+      slug: '',
     },
     {
       id: '2',
@@ -22,7 +23,8 @@ export default function RecentPosts() {
       description:
         'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
       tagList: ['Figma', 'Icon Design'],
-      publishedDate: '1683564640973',
+      publishedDate: '2022-06-18T07:00:00Z',
+      slug: '',
     },
   ]
 
