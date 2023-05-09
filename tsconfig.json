@@ -16,14 +16,14 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/models/*": ["./models/*"],
-      "@/pages/*": ["./src/pages/components/*"],
       "@/api/*": ["./api-client/*"],
+      "@/models/*": ["./models/*"],
       "@/hooks/*": ["./hooks/*"],
-      "@/utils/*": ["./utils/*"],
       "@/images/*": ["./images/*"],
-      "@/common/*": ["./src/components/common/*"]
+      "@/home/*": ["./src/components/home/*"],
+      "@/common/*": ["./src/components/common/*"],
+      "@/layout/*": ["./src/components/layout/*"],
+      "@/utils/*": ["./src/utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

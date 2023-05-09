@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 
-import { MainLayout } from '@/components/layout'
+import { MainLayout } from '@/components/layout/index'
 
 import { NextPageWithLayout } from '@/models/common'
 

@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react'
 // import HeaderProps from './components/Header';
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
-import { AdminLayout, MainLayout } from '@/components/layout'
+
 import { Box, Typography } from '@mui/material'
+import { AdminLayout } from '@/layout/index'
+
 export interface AboutPage {}
-const HeaderProps = dynamic(() => import('@/pages/Header'), { ssr: false })
 
 export default function AboutPage(props: AboutPage) {
   const router = useRouter()
@@ -44,7 +45,7 @@ export default function AboutPage(props: AboutPage) {
       </Typography>
 
       <h3>Go to home</h3>
-      <HeaderProps />
+
       <ul>
         {postList.map((post: any) => (
           <li key={post.id}>{post.title}</li>

@@ -8,11 +8,11 @@ import Document, {
   DocumentContext,
 } from 'next/document'
 import { AppType } from 'next/app'
-import { createEmotionCache, roboto, theme } from '@/utils'
-
-import { AppPropsWithLayout } from '@/models/common'
 
 import createEmotionServer from '@emotion/server/create-instance'
+import { createEmotionCache, roboto, theme } from '@/utils'
+import { AppPropsWithLayout } from '@/models/common'
+
 interface MyDocumentProps extends DocumentProps {
   emotionStyleTags: JSX.Element[]
 }
