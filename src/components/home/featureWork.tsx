@@ -1,10 +1,7 @@
 import React from 'react'
-import { Box, Container, Stack, Typography, Link as MuiLink } from '@mui/material'
+import { Box, Container, Typography, Link as MuiLink } from '@mui/material'
 
-import Link from 'next/link'
-import PostCard from './post-card'
 import { Work } from '@/models/work'
-import { Post } from '@/models/posts'
 import WorkList from '../work/workList'
 
 export default function FeatureWork() {
@@ -52,7 +49,9 @@ export default function FeatureWork() {
     // 1unit = 8px
     <Box component="section" py={4}>
       <Container>
-        <Typography variant="h4">Feature work</Typography>
+        <Typography mb={4} variant="h4">
+          Feature work
+        </Typography>
 
         <WorkList workList={workList} />
       </Container>

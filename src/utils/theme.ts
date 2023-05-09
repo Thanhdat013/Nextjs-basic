@@ -104,7 +104,7 @@ export let theme = createTheme({
             color: 'white',
             fontWeight: 'bold',
             padding: '4px 8px',
-            fontSize: 16,
+            fontSize: 18,
           },
         },
       ],
