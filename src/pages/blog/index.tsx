@@ -1,12 +1,12 @@
+import PostItem from '@/components/blog/postItem'
 import { MainLayout } from '@/components/layout'
+import { Post } from '@/models/posts'
 import { getPostList } from '@/utils/post'
+import { Box, Container, Divider, Typography } from '@mui/material'
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 import Link from 'next/link'
-import React from 'react'
-import { Box, Container, Typography, Divider, Stack } from '@mui/material'
-import PostItem from '@/components/blog/postItem'
 export interface BlogList {
-  posts: any[]
+  posts: Post[]
 }
 
 export default function BlogPage({ posts }: BlogList) {

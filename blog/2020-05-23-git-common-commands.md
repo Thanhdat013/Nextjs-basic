@@ -13,6 +13,8 @@ Khi nhắc tới git có khá là nhiều lệnh khác nhau, tuy nhiên trong th
 
 <!-- truncate-->
 
+## Agenda
+
 ## 0. Nhận task, ví dụ ở đây task có id là 123
 
 - Tí nữa, đọc thấy tạo nhánh có số 123 thì các bạn hiểu ngầm nó chính là `taskId` nhen.
@@ -20,9 +22,8 @@ Khi nhắc tới git có khá là nhiều lệnh khác nhau, tuy nhiên trong th
 
 ## 1. Lấy code mới nhất trên branch develop
 
-```sh
+```javascript
 git checkout develop # switch sang nhánh develop
-
 git pull # lấy code mới nhất về
 ```
 
@@ -48,9 +49,7 @@ CODING CHANGES 😎
 
 ```sh
 git add . # chấp nhận tất cả changes
-
 git stash # save tất cả code changes vào stash (kiểu nơi giữ code tạm)
-
 git pull  # lấy code mới nhất về
 ```
 
@@ -73,7 +72,6 @@ git stash pop
 ```sh
 git status # xem các files thay đổi
 git add . # chấp nhận tất cả thay đổi
-
 git commit -m "[123] Add address ui
 
 - More details about your PR

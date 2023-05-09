@@ -8,6 +8,7 @@ export interface PostItemProps {
 }
 
 export default function PostItem({ post }: PostItemProps) {
+  const htmlString = post.mdContent
   return (
     <Box>
       <Typography
