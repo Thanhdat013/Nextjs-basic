@@ -1,7 +1,8 @@
 import React from 'react'
 import { Card, CardContent, Typography, Divider, Stack } from '@mui/material'
-import { Post } from '@/models'
+
 import { format } from 'date-fns'
+import { Post } from '@/models/posts'
 
 export interface PostCardProps {
   post: Post

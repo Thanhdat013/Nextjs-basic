@@ -7,6 +7,7 @@ import { NextPageWithLayout } from '@/models/common'
 import { Box } from '@mui/material'
 import HeroSection from '@/components/home/hero'
 import RecentPosts from '@/components/home/recentPosts'
+import FeatureWork from '@/components/home/featureWork'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,6 +16,7 @@ const Home: NextPageWithLayout = () => {
     <Box>
       <HeroSection />
       <RecentPosts />
+      <FeatureWork />
     </Box>
   )
 }

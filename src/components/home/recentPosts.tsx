@@ -3,7 +3,7 @@ import { Box, Container, Stack, Typography, Link as MuiLink } from '@mui/materia
 
 import Link from 'next/link'
 import PostCard from './post-card'
-import { Post } from '@/models'
+import { Post } from '@/models/posts'
 
 export default function RecentPosts() {
   // call Api to get recent posts
