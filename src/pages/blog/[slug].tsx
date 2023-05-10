@@ -1,10 +1,7 @@
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import React, { useLayoutEffect, useRef } from 'react'
+import React from 'react'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import { getPostList } from '@/utils/post'
 import { Box, Container, Typography, Divider, Stack } from '@mui/material'
-import PostItem from '@/components/blog/postItem'
 import { Post } from '@/models/posts'
 import { format } from 'date-fns'
 import { unified } from 'unified'
@@ -19,19 +16,14 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import remarkPrism from 'remark-prism'
 import Script from 'next/script'
 import Seo from '@/components/common/seo'
+import Image from 'next/image'
+import { MainLayout } from '@/components/layout'
 
 export interface BlogDetailPost {
   post: Post
 }
 
 export default function BlogDetailPost({ post }: BlogDetailPost) {
-  const elRef = useRef<React.LegacyRef<HTMLDivElement>>()
-
-  useLayoutEffect(() => {
-    if (elRef.current) {
-      console.log(elRef.current)
-    }
-  })
   if (!post) return null
   return (
     <Box mt={8}>
@@ -62,16 +54,23 @@ export default function BlogDetailPost({ post }: BlogDetailPost) {
             {post.tagList.join(', ')}
           </Typography>
         </Stack>
-        <Typography mb={1} variant={'body1'}>
-          {`Tác giả: ${post.author?.name}`}
-        </Typography>
+        <Stack direction="row" textAlign="center" alignItems="center" mb={1} spacing={2}>
+          <Typography variant={'body1'}>{`Tác giả: ${post.author?.name}`}</Typography>
+          <Image
+            src={post.author.avatarUrl}
+            alt="avatar"
+            width={30}
+            height={30}
+            style={{ borderRadius: '50%' }}
+          />
+        </Stack>
         <Typography mb={2} variant={'body1'}>
-          {`Công việc: ${post.author?.title}`}
+          {`Công việc hiện tại: ${post.author?.title}`}
         </Typography>
 
         <div
           style={{
-            marginBottom: '10px',
+            marginBottom: '20px',
           }}
           dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }}
         ></div>
@@ -124,3 +123,5 @@ export const getStaticProps: GetStaticProps<BlogDetailPost> = async (
     },
   }
 }
+
+BlogDetailPost.Layout = MainLayout

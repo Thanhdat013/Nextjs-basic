@@ -6,7 +6,7 @@ export interface Post {
   tagList: string[]
 
   slug: string
-  author?: Author
+  author: Author
   thumbnailUrl?: string
 
   mdContent?: string

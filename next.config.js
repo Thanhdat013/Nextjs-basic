@@ -11,6 +11,12 @@ const nextConfig = {
         port: '',
         pathname: '/dwgwlmu6i/image/upload/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'avatars3.githubusercontent.com',
+        port: '',
+        pathname: '/u/**',
+      },
     ],
   },
 }

@@ -1,8 +1,7 @@
 import httpProxy, { ProxyResCallback } from 'http-proxy'
 import Cookies from 'cookies'
-import url from 'url'
+
 import { NextApiRequest, NextApiResponse } from 'next'
-import { access } from 'fs/promises'
 
 type Data = {
   message: string
@@ -40,6 +39,14 @@ const handler = (req: NextApiRequest, res: NextApiResponse<Data>) => {
       //once() apply cho 1 request
       proxyRes.on('end', function () {
         try {
+          // check login failed
+          const isSuccess =
+            proxyRes.statusCode && proxyRes.statusCode >= 200 && proxyRes.statusCode < 300
+          if (!isSuccess) {
+            ;(res as NextApiResponse).status(proxyRes.statusCode || 500).json(body)
+            resolve(true)
+          }
+          // set values when login success
           const { accessToken, expiredAt } = JSON.parse(body)
           console.log(JSON.parse(body))
 
