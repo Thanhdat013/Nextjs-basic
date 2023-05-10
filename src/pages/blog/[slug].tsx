@@ -16,22 +16,35 @@ import rehypeStringify from 'rehype-stringify'
 import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import remarkPrism from 'remark-prism'
+import Script from 'next/script'
+import Seo from '@/components/common/seo'
 
 export interface BlogDetailPost {
   post: Post
 }
 
-export default function DetailPost({ post }: BlogDetailPost) {
+export default function BlogDetailPost({ post }: BlogDetailPost) {
   const elRef = useRef<React.LegacyRef<HTMLDivElement>>()
 
   useLayoutEffect(() => {
     if (elRef.current) {
-      console.log(elRef.current.li)
+      console.log(elRef.current)
     }
   })
   if (!post) return null
   return (
     <Box mt={8}>
+      <Seo
+        data={{
+          title: `${post.title} Next.js`,
+          description: post.description,
+          url: `${process.env.HOST_URL}/blog/${post.slug}`,
+          thumbnailUrl:
+            post.thumbnailUrl ||
+            'https://online.codienhanoi.edu.vn/pluginfile.php/1/blog/attachment/13/nextjs.jpeg',
+        }}
+      />
       <Container>
         <Typography
           variant={'h4'}
@@ -49,11 +62,21 @@ export default function DetailPost({ post }: BlogDetailPost) {
             {post.tagList.join(', ')}
           </Typography>
         </Stack>
-        <Typography mb={3} variant={'body1'}>
-          {post.description}
+        <Typography mb={1} variant={'body1'}>
+          {`Tác giả: ${post.author?.name}`}
         </Typography>
-        <div dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }} ref={elRef}></div>
+        <Typography mb={2} variant={'body1'}>
+          {`Công việc: ${post.author?.title}`}
+        </Typography>
+
+        <div
+          style={{
+            marginBottom: '10px',
+          }}
+          dangerouslySetInnerHTML={{ __html: post.htmlContent || '' }}
+        ></div>
       </Container>
+      <Script src="/prism.js" strategy="afterInteractive"></Script>
     </Box>
   )
 }
@@ -83,6 +106,7 @@ export const getStaticProps: GetStaticProps<BlogDetailPost> = async (
   const htmlFile = await unified()
     .use(remarkParse)
     .use(remarkToc, { heading: 'agenda.*' })
+    .use(remarkPrism)
     .use(remarkRehype)
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, { behavior: 'wrap' })

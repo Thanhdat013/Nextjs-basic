@@ -7,6 +7,7 @@ export interface Post {
 
   slug: string
   author?: Author
+  thumbnailUrl?: string
 
   mdContent?: string
   htmlContent?: string

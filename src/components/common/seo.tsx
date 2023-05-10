@@ -16,7 +16,7 @@ export default function Seo({ data }: SeoProps) {
   return (
     <Head>
       {/* <!-- Primary Meta Tags --> */}
-      <title>Next.js tutorials to beginner </title>
+      <title>{title} </title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
 

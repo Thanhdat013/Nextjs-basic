@@ -7,6 +7,7 @@ author_url: https://github.com/paulnguyen-mn
 author_image_url: https://avatars3.githubusercontent.com/u/31444102?s=400&u=c545a527aa31843e1361462e410c0f51863e8e26&v=4
 tags: [git, git trong dự án thực tế]
 date: '2022-06-18T07:00:00Z'
+img: 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
 ---
 
 Khi nhắc tới git có khá là nhiều lệnh khác nhau, tuy nhiên trong thực tế sử dụng trong dự án thì có những lệnh nào được sử dụng nhiều nhất? 🤔 Hãy cùng mình khám phá qua bài blog này nhé! 😉
@@ -22,7 +23,7 @@ Khi nhắc tới git có khá là nhiều lệnh khác nhau, tuy nhiên trong th
 
 ## 1. Lấy code mới nhất trên branch develop
 
-```javascript
+```js
 git checkout develop # switch sang nhánh develop
 git pull # lấy code mới nhất về
 ```
@@ -59,7 +60,7 @@ git pull  # lấy code mới nhất về
 git checkout -b feature/123-add-address-ui
 ```
 
-## 5. Lấy code từ trong stash ra (hùi nảy lưu bằng git stash)
+## 5. Lấy code từ trong stash ra (rồi hãy lưu bằng git stash)
 
 ```sh
 git stash pop

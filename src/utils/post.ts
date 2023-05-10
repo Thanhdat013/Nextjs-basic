@@ -28,6 +28,7 @@ export async function getPostList(): Promise<Post[]> {
       tagList: data.tags,
       publishedDate: data.date,
       description: excerpt || '',
+      thumbnailUrl: data.image || null,
       author: {
         name: data.author,
         title: data.author_title,
