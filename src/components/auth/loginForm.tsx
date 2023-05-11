@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import { useForm } from 'react-hook-form'
-import { Box, Button, CircularProgress, IconButton, InputAdornment } from '@mui/material'
-import InputField from '../form/inputField'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
+import { Box, Button, CircularProgress, IconButton, InputAdornment } from '@mui/material'
+import { useForm } from 'react-hook-form'
+import InputField from '../form/inputField'
 
 import { LoginPayload } from '@/models/auth'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -18,7 +18,6 @@ const schema = yup
     password: yup.string().required(),
   })
   .required()
-type FormData = yup.InferType<typeof schema>
 
 export default function LoginForm({ onSubmit }: LoginFormProps) {
   // validate with yub

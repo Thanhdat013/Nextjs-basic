@@ -59,6 +59,7 @@ export default function HeaderDesktop() {
             variant="persistent"
             anchor="right"
             open={open}
+            onClose={handleClose}
           >
             <Box minHeight={55}>
               <IconButton onClick={handleClose}>
@@ -80,6 +81,7 @@ export default function HeaderDesktop() {
                     <ListItemText>
                       <Link legacyBehavior href={route.path} key={route.path} passHref>
                         <MuiLink
+                          onClick={handleClose}
                           sx={{ fontWeight: 'medium' }}
                           className={clsx({ active: router.pathname === route.path })}
                         >

@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import HeaderDesktop from './headerDesktop'
 import HeaderMobile from './headerMobile'
 
-export default function Header() {
+export function Header() {
   return (
     <>
       <HeaderDesktop />

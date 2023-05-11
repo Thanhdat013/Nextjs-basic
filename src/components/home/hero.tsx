@@ -8,7 +8,7 @@ export default function HeroSection() {
     // 1unit = 8px
     <Box
       component="section"
-      pt={{ tablet: 16, mobile: 4 }}
+      pt={{ tablet: 13, mobile: 4 }}
       pb={{ tablet: 9, mobile: 7 }}
       mt={{ mobile: 6 }}
     >

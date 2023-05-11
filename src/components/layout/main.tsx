@@ -3,7 +3,9 @@ import Link from 'next/link'
 import React from 'react'
 import { Stack, Box, Container } from '@mui/material'
 import { Footer } from '@/common/index'
-import Header from '@/common/header'
+import dynamic from 'next/dynamic'
+
+const Header = dynamic(() => import('@/common/header').then((mod) => mod.Header), { ssr: false })
 
 export function MainLayout({ children }: LayoutProps) {
   return (
