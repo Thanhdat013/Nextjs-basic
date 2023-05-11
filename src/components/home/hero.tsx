@@ -6,7 +6,12 @@ import avatar from '@/images/Avatar1.png'
 export default function HeroSection() {
   return (
     // 1unit = 8px
-    <Box component="section" pt={{ tablet: 16, mobile: 4 }} pb={{ tablet: 9, mobile: 7 }}>
+    <Box
+      component="section"
+      pt={{ tablet: 16, mobile: 4 }}
+      pb={{ tablet: 9, mobile: 7 }}
+      mt={{ mobile: 6 }}
+    >
       <Container>
         <Stack
           spacing={4}

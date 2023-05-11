@@ -80,6 +80,7 @@ export default function LoginForm({ onSubmit }: LoginFormProps) {
         type="submit"
         fullWidth
         sx={{ mt: 2 }}
+        color="warning"
       >
         Login
       </Button>

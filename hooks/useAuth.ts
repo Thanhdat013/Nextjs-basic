@@ -2,7 +2,7 @@ import useSWR from 'swr'
 import { PublicConfiguration } from 'swr/_internal'
 
 import { authApi } from '@/api/authApi'
-import { LoginPayload } from '../models'
+import { LoginPayload, UserProfile } from '../models'
 
 export function useAuth(options?: Partial<PublicConfiguration>) {
   //profile
@@ -21,12 +21,11 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
 
   async function login(payload: LoginPayload) {
     await authApi.login(payload)
-
     await mutate()
   }
   async function logout() {
     await authApi.logout()
-    mutate({}, false)
+    mutate(null, false)
   }
 
   return {
