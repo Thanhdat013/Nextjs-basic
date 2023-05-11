@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { Container, Stack, Link as MuiLink } from '@mui/material'
+import { useAuth } from '@/hooks/useAuth'
+import { Container, Link as MuiLink, Stack } from '@mui/material'
 import { Box } from '@mui/system'
-import { ROUTE_LIST } from './routes'
+import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import clsx from 'clsx'
-import { useAuth } from '@/hooks/useAuth'
+import { ROUTE_LIST } from './routes'
 
 export default function HeaderDesktop() {
   const router = useRouter()

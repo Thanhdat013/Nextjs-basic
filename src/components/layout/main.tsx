@@ -5,7 +5,7 @@ import { Stack, Box, Container } from '@mui/material'
 import { Footer } from '@/common/index'
 import dynamic from 'next/dynamic'
 
-const Header = dynamic(() => import('@/common/header').then((mod) => mod.Header), { ssr: false })
+const Header = dynamic(() => import('@/common/header'), { ssr: false })
 
 export function MainLayout({ children }: LayoutProps) {
   return (
