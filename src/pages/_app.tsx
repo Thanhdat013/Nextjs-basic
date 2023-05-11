@@ -11,6 +11,8 @@ import CssBaseline from '@mui/material/CssBaseline'
 
 import { createEmotionCache, theme } from '@/utils'
 import { ThemeProvider } from '@mui/material/styles'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -25,6 +27,7 @@ export default function App({
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <ToastContainer />
         <SWRConfig value={{ fetcher: (url) => axiosClient.get(url), shouldRetryOnError: false }}>
           <Layout>
             <Component {...pageProps} />
