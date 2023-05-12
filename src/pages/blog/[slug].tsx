@@ -57,7 +57,11 @@ export default function BlogDetailPost({ post }: BlogDetailPost) {
         <Stack direction="row" textAlign="center" alignItems="center" mb={1} spacing={2}>
           <Typography variant={'body1'}>{`Tác giả: ${post.author?.name}`}</Typography>
           <Image
-            src={post.author.avatarUrl}
+            src={
+              post.author
+                ? post.author.avatarUrl
+                : 'https://evo-ml.com/wp-content/uploads/2019/03/Avatar.png'
+            }
             alt="avatar"
             width={30}
             height={30}

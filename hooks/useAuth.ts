@@ -1,9 +1,9 @@
-import useSWR from 'swr'
+import useSWR, { SWRConfiguration } from 'swr'
 
 import { authApi } from '@/api/authApi'
-import { LoginPayload, UserProfile } from '../models'
-import { BareFetcher, PublicConfiguration } from 'swr/_internal'
+
 import { LocalStorageKey } from '../constants'
+import { LoginPayload, UserProfile } from '../models'
 
 function getUserInfo(): UserProfile | null {
   try {
@@ -14,7 +14,7 @@ function getUserInfo(): UserProfile | null {
   }
 }
 
-export function useAuth(options?: Partial<PublicConfiguration<any, any, BareFetcher<any>>>) {
+export function useAuth(options?: Partial<SWRConfiguration>) {
   //profile
 
   const {
