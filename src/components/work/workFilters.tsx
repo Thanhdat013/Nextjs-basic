@@ -43,7 +43,6 @@ export default function WorkFilters({ onSubmit }: WorkFiltersProps) {
           ),
         }}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
-          console.log('search by title', event.target.value)
           debounceSearchFilter()
         }}
       />

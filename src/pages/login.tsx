@@ -2,10 +2,12 @@ import LoginForm from '@/components/auth/loginForm'
 import { useAuth } from '@/hooks/useAuth'
 import { LoginPayload } from '@/models/auth'
 import { getErrorMessage } from '@/utils'
-import { Paper, Typography } from '@mui/material'
+import { Paper, Stack, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
+import Link from 'next/link'
+import { Link as MuiLink } from '@mui/material'
 
 export interface LoginPageProps {}
 
@@ -45,10 +47,15 @@ export default function LoginPage(props: LoginPageProps) {
           transform: 'translateY(-50%)',
         }}
       >
-        <Typography component="h1" variant="h5">
-          Login
-        </Typography>
-        <LoginForm onSubmit={handleLoginSubmit} />
+        <Stack gap={2}>
+          <Typography component="h1" variant="h5">
+            Welcome back
+          </Typography>
+          <LoginForm onSubmit={handleLoginSubmit} />
+          <Link legacyBehavior href="/" passHref>
+            <MuiLink sx={{ cursor: 'pointer' }}> {`>> Go back home`}</MuiLink>
+          </Link>
+        </Stack>
       </Paper>
     </Box>
   )

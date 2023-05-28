@@ -1,8 +1,4 @@
-import { Work } from '@/models/work'
-import React from 'react'
-import { Stack, Chip, Box, Typography, Skeleton } from '@mui/material'
-import Image from 'next/image'
-import { format } from 'date-fns'
+import { Box, Skeleton, Stack, Typography } from '@mui/material'
 
 export default function WorkSkelton() {
   return (

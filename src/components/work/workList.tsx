@@ -31,6 +31,7 @@ export default function WorkList({ workList, loading }: WorkListProps) {
             height={600}
             width={800}
             alt="data not found"
+            priority={false}
           />
         </Container>
       </Box>

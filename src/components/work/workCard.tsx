@@ -16,7 +16,8 @@ export default function WorkCard({ work }: WorkCardProps) {
           width={246}
           height={180}
           alt="work image"
-          style={{ width: '100%', height: '100%' }}
+          style={{ width: 'auto', height: 'auto' }}
+          priority={false}
         />
       </Box>
       <Box>

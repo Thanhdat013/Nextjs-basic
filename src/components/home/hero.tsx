@@ -33,7 +33,12 @@ export default function HeroSection() {
             <Button variant="contained">Download Resume</Button>
           </Box>
           <Box sx={{ minWidth: '240px', bomobilehadow: '-5px 13px #EDF7FA', borderRadius: '50%' }}>
-            <Image src={avatar} alt="avatar" />
+            <Image
+              src={avatar}
+              alt="avatar"
+              priority={false}
+              style={{ width: 'auto', height: 'auto' }}
+            />
           </Box>
         </Stack>
       </Container>
