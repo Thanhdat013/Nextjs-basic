@@ -35,9 +35,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse<any>) => {
       selfHandleResponse: false,
     })
 
-    proxy.once('proxyRes', () => {
-      resolve(true)
-    })
+    
   })
 }
 

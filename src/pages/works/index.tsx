@@ -55,33 +55,37 @@ export default function WorksPage(props: WorksPageProps) {
     )
   }
   return (
-    <Box mt={{ mobile: 10 }}>
-      <Container>
-        <Box mb={3}>
-          <Typography component="h1" variant="h3" fontWeight="bold">
-            Work
-          </Typography>
-        </Box>
-        {/*  router.isReady  when router.isReady has a values --> render component */}
-        {router.isReady && (
-          <WorkFilters initialValue={initialValueSearch} onSubmit={handleFilterChange} />
-        )}
-        <WorkList workList={data?.data || []} loading={isLoading} />
+    data.data.length > 0 && (
+      <>
+        <Box mt={{ mobile: 10 }}>
+          <Container>
+            <Box mb={3}>
+              <Typography component="h1" variant="h3" fontWeight="bold">
+                Work
+              </Typography>
+            </Box>
+            {/*  router.isReady  when router.isReady has a values --> render component */}
+            {router.isReady && (
+              <WorkFilters initialValue={initialValueSearch} onSubmit={handleFilterChange} />
+            )}
+            <WorkList workList={data?.data || []} loading={isLoading} />
 
-        {totalPage > 0 && (
-          <Stack mb={4} spacing={2} alignItems="center">
-            <Pagination count={totalPage} page={_page} onChange={handlePageChange} />
-          </Stack>
-        )}
-      </Container>
-    </Box>
+            {totalPage > 0 && (
+              <Stack mb={4} spacing={2} alignItems="center">
+                <Pagination count={totalPage} page={_page} onChange={handlePageChange} />
+              </Stack>
+            )}
+          </Container>
+        </Box>
+      </>
+    )
   )
 }
 
 WorksPage.Layout = MainLayout
 
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
-}
+// export async function getStaticProps() {
+//   return {
+//     props: {},
+//   }
+// }
